@@ -6,6 +6,7 @@ from random import randint
 screen = turtle.getscreen()
 screen.clear()
 screen.title("Game")
+screen.colormode(255)
 myTurtle = turtle.Turtle()
 myTurtle.reset()
 
@@ -14,7 +15,9 @@ def colors():
     r = randint(0,255)
     g = randint(0,255)
     b = randint(0,255)
-    colors.append(r,g,b)
+    colors.append(r)
+    colors.append(g)
+    colors.append(b)
     return colors
 
 
@@ -31,7 +34,8 @@ def rechteck(laenge,breite):
 
 
 def positionieren(abstand):
-
+    color = colors()
+    myTurtle.color((color[0],color[1],color[2]))
     myTurtle.forward(abstand)
     myTurtle.right(90)
     myTurtle.forward(abstand)
@@ -113,6 +117,6 @@ def rechteck_schoner(laenge,breite,abstand,x,y):
 
 
 
-außen_rechteck_zeichner(500,250,20)
+außen_rechteck_zeichner(300,250,2)
 
 
